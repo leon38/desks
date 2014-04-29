@@ -26,9 +26,18 @@ get_header(); ?>
 ?>
 
 	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
+		<div id="content" class="site-content container" role="main">
+		<div class="filters">
+			<label>Sort by: </label>
+			<span>Popular</span>
+			<span>Recent</span>
+			<span>Most Liked</span>
+			<span>Past Features</span>
+			<div class="clearfix"></div>
+		</div>
+		<div class="row">
 		<?php
+			$i = 0;
 			if ( have_posts() ) :
 				// Start the Loop.
 				while ( have_posts() ) : the_post();
@@ -38,8 +47,11 @@ get_header(); ?>
 					 * use this in a child theme, then include a file called called content-___.php
 					 * (where ___ is the post format) and that will be used instead.
 					 */
-					get_template_part( 'content', get_post_format() );
-
+				?>
+					<div class="col-4 post">
+						<?php the_post_thumbnail( 'post-thumbnail' ); ?>
+					</div>
+				<?php
 				endwhile;
 				// Previous/next post navigation.
 				twentyfourteen_paging_nav();
@@ -50,10 +62,15 @@ get_header(); ?>
 
 			endif;
 		?>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
 
 		</div><!-- #content -->
+		<div class="clearfix"></div>
 	</div><!-- #primary -->
 	<?php //get_sidebar( 'content' ); ?>
+	<div class="clearfix"></div>
 </div><!-- #main-content -->
 
 <?php

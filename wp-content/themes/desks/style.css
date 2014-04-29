@@ -506,6 +506,11 @@ hr {
 	float: left;
 }
 
+.row {
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
 	float: left;
 	position: relative;
@@ -730,4 +735,57 @@ body {
 .bg .infos .metas {
 	color: #fff;
 	padding-left: 10px;
+}
+
+.post img {
+	max-width: 100%;
+	height: auto;
+}
+
+.filters {
+	width: 100%;
+	margin: 20px 0;
+	font-size: 0.75em;
+}
+
+.filters label {
+	display: block;
+	float: left;
+	margin-right: 10px;
+}
+
+.filters span {
+	display: block;
+	float: left;
+	margin: 0 10px;
+}
+
+form li {
+	list-style-type: none;
+	font-size: 0.75em;
+	display: block;
+	float: left;
+	width: 100%;
+}
+
+form li label {
+	width: 35%;
+	float: left;
+	display: block;
+}
+
+form li input {
+	width: 50%;
+	float: left;
+	display: block;
+	border: 1px solid #777C7E;
+}
+
+footer {
+	font-size: 0.75em;
+}
+
+footer .site-info {
+	margin-top: 20px;
+	padding: 0 0 20px;
 }
