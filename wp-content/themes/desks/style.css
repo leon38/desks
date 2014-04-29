@@ -475,6 +475,16 @@ hr {
 	text-shadow: none;
 }
 
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 
 /**
  * 2.0 Grid
@@ -635,6 +645,7 @@ body {
 .tag-mis-en-avant .post-thumbnail {
 	display: block;
 	width:100%;
+	text-align: center;
 }
 
 .tag-mis-en-avant .post-thumbnail img {
@@ -738,9 +749,45 @@ body {
 }
 
 .post img {
-	max-width: 100%;
 	height: auto;
 }
+
+.post a {
+	display: block;
+}
+
+.post a .bg {
+	display: block;
+	position: absolute;
+	top: 0;
+	padding: 0;
+	bottom: 0;
+	z-index: 1;
+	background-color: rgba(0,0,0, 0.2);
+	width: 96%;
+}
+
+.post a .infos {
+	position: absolute;
+	bottom:10px;
+	left: 10px;
+	font-size: 0.75em;
+	color: #fff;
+	z-index:2;
+}
+
+.post a .infos img {
+	border-radius: 50%;
+}
+
+.post a .infos span {
+	color: #fff;
+}
+
+.post a:hover .bg {
+	background-color: rgba(0,0,0, 0.5);
+}
+
 
 .filters {
 	width: 100%;

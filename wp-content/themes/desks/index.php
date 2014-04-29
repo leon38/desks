@@ -49,7 +49,16 @@ get_header(); ?>
 					 */
 				?>
 					<div class="col-4 post">
-						<?php the_post_thumbnail( 'post-thumbnail' ); ?>
+						<a href="<?php the_permalink(); ?>">
+							<?php the_post_thumbnail( 'post-thumbnail', array('class' => 'img-responsive') ); ?>
+							
+							<div class="infos">
+								<?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+								<span class="author"><?php the_author(); ?></span>
+							</div>
+							<div class="bg">
+							</div>
+						</a>
 					</div>
 				<?php
 				endwhile;
