@@ -1,0 +1,64 @@
+#content .post {
+	margin-bottom: 30px;
+}
+
+.post img {
+	height: auto;
+	max-width: 100%;
+}
+
+.post a {
+	display: block;
+}
+
+#content .post a .bg {
+	display: block;
+	position: absolute;
+	top: 0;
+	padding: 0;
+	bottom: 4px;
+	z-index: 1;
+	background-color: rgba(0,0,0, 0.1);
+	width: 92.305897%;
+}
+
+.post a .infos {
+	position: absolute;
+	bottom:10px;
+	left: 10px;
+	font-size: 0.75em;
+	color: #fff;
+	z-index:2;
+}
+
+.post a .infos img {
+	border-radius: 50%;
+}
+
+.post a .infos span {
+	color: #fff;
+}
+
+#content  .post a:hover .bg {
+	background-color: rgba(0,0,0, 0.5);
+}
+
+
+.filters {
+	width: 100%;
+	margin: 20px 0;
+	font-size: 0.75em;
+	color: $main-color;
+}
+
+.filters label {
+	display: block;
+	float: left;
+	margin-right: 10px;
+}
+
+.filters span {
+	display: block;
+	float: left;
+	margin: 0 10px;
+}

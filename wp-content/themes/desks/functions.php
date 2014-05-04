@@ -243,7 +243,9 @@ function twentyfourteen_scripts() {
 		) );
 	}
 
-	wp_enqueue_script( 'twentyfourteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20140319', true );
+	wp_enqueue_script( 'desks-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20140319', true );
+	wp_localize_script( 'desks-script', 'desksAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ), 'addok'=>__('Successfully booked'), 'adderror'=>__('An error occured, try again later') ) );
+	wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '20140319', true );
 }
 add_action( 'wp_enqueue_scripts', 'twentyfourteen_scripts' );
 
@@ -480,13 +482,13 @@ function twentyfourteen_wp_title( $title, $sep ) {
 add_filter( 'wp_title', 'twentyfourteen_wp_title', 10, 2 );
 
 // Implement Custom Header features.
-require get_template_directory() . '/inc/custom-header.php';
+//require get_template_directory() . '/inc/custom-header.php';
 
 // Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';
 
 // Add Theme Customizer functionality.
-require get_template_directory() . '/inc/customizer.php';
+//require get_template_directory() . '/inc/customizer.php';
 
 /*
  * Add Featured Content functionality.
@@ -497,3 +499,22 @@ require get_template_directory() . '/inc/customizer.php';
 if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow'] ) {
 	require get_template_directory() . '/inc/featured-content.php';
 }
+
+require get_template_directory() . '/inc/subscription.php';
+
+
+add_action('wp_ajax_user_registration', 'user_registration');
+add_action('wp_ajax_nopriv_user_registration', 'user_registration');
+function user_registration()
+{
+	global $wpdb;
+	$errors = validate_form($_POST);
+	$data = array();
+	if(!$errors) {
+		$data = register_user($_POST);
+	}
+	send_email($data);
+	return "1";
+}
+
+require get_template_directory() . '/inc/desks_settings.php';

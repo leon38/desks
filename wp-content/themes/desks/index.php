@@ -27,15 +27,19 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content container" role="main">
-		<div class="filters">
-			<label>Sort by: </label>
-			<span>Popular</span>
-			<span>Recent</span>
-			<span>Most Liked</span>
-			<span>Past Features</span>
-			<div class="clearfix"></div>
-		</div>
-		<div class="row">
+				<div class="row">
+					<div class="col-lg-12 col-md-12">
+						<div class="filters">
+							<label>Sort by: </label>
+							<span>Popular</span>
+							<span>Recent</span>
+							<span>Most Liked</span>
+							<span>Past Features</span>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				
 		<?php
 			$i = 0;
 			if ( have_posts() ) :
@@ -48,20 +52,20 @@ get_header(); ?>
 					 * (where ___ is the post format) and that will be used instead.
 					 */
 				?>
-					<div class="col-4 post">
+				<?php echo ($i%3 == 0) ? '<div class="row">' : ''; ?>
+					<div class="col-lg-4 col-md-4 post">
 						<a href="<?php the_permalink(); ?>">
 							<?php the_post_thumbnail( 'post-thumbnail', array('class' => 'img-responsive') ); ?>
-							
-							<div class="infos">
-								<?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
-								<span class="author"><?php the_author(); ?></span>
-							</div>
-							<div class="bg">
-							</div>
+							<div class="bg"></div>
 						</a>
 					</div>
+					<?php echo (($i+1)%3 == 0 && $i > 0) ? '</div>' : ''; ?>
 				<?php
+				$i++;
 				endwhile;
+				?>
+				</div>
+				<?php
 				// Previous/next post navigation.
 				twentyfourteen_paging_nav();
 
@@ -74,7 +78,6 @@ get_header(); ?>
 			<div class="clearfix"></div>
 		</div>
 		<div class="clearfix"></div>
-
 		</div><!-- #content -->
 		<div class="clearfix"></div>
 	</div><!-- #primary -->

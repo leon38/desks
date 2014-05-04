@@ -1,0 +1,111 @@
+#features {
+	float: right;
+}
+
+.tag-mis-en-avant .post-thumbnail {
+	display: block;
+	width:100%;
+	text-align: center;
+}
+
+.tag-mis-en-avant .post-thumbnail img {
+	max-width: 100%;
+	height: auto;
+}
+
+.mask {
+	height:680px;
+	overflow: hidden;
+	position: relative;
+}
+
+.bg {
+	position: absolute;
+	top: 0;
+	bottom:0;
+	width:100%;
+	background-color: rgba(0,0,0,0.5);
+	padding-top: 20px;
+}
+
+.title-subtitle p {
+	color: #fff;
+}
+
+.title-subtitle h1 {
+	display:block;
+	float: left;
+	margin-bottom: 10px;
+}
+
+.title-subtitle h1 a {
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 400;
+	letter-spacing: 0.2em;
+}
+
+.bg .desc {
+	color: #fff;
+	margin: 36px 0 0 0;
+}
+
+.bg .desc h3 {
+	color: #fff;
+	margin:0;
+	font-size: 0.75em;
+	font-weight: 400;
+	text-transform: uppercase;
+	text-align: right;
+	border-bottom: 1px solid #fff;
+	padding-bottom: 3px;
+	display: block;
+	width:auto;
+	float: right;
+	letter-spacing: 0.2em;
+}
+
+.bg .desc ul li {
+	color: #fff;
+	list-style-type: none;
+	font-weight:300;
+	font-size: 0.75em;
+	text-align: right;
+	text-transform: uppercase;
+	line-height:2.2em;
+}
+
+.bg .infos {
+	color: #fff;
+	font-weight: 300;
+	position: absolute;
+	bottom: 20px;
+	font-size: 0.75em;
+	line-height: 3em;
+	vertical-align: middle;
+}
+
+.bg .infos img {
+	border-radius: 50%;
+	border: 2px solid #fff;
+	display: block;
+	float: left;
+	margin-top: 0em;
+}
+
+.bg .infos .author {
+	border-right: 1px solid #fff;
+	padding: 0 10px;
+	display: block;
+	float: left;
+	color: #fff;
+	height: 3em;
+	line-height: 3em;
+}
+
+.bg .infos .metas {
+	color: #fff;
+	padding-left: 10px;
+}
+
+
